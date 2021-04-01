@@ -110,12 +110,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   setRecognitions,
                 ),
                 BoundBox(
-                    _recognitions == null ? [] : _recognitions,
-                    math.max(_imageHeight, _imageWidth),
-                    math.min(_imageHeight, _imageWidth),
-                    screen.height,
-                    screen.width,
-                    _model),
+                  _recognitions == null ? [] : _recognitions,
+                  math.max(_imageHeight, _imageWidth),
+                  math.min(_imageHeight, _imageWidth),
+                  screen.height,
+                  screen.width,
+                  _model,
+                ),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    padding: EdgeInsets.all(20),
+                    child: FloatingActionButton(
+                      onPressed: () {
+                        _model = "";
+                      },
+                      child: const Icon(Icons.exit_to_app),
+                      backgroundColor: Colors.blue,
+                    ),
+                  ),
+                ),
               ],
             ),
     );
