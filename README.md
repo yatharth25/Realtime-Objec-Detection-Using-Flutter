@@ -30,5 +30,6 @@ flutter run
 
 ## Previews
 
-![](preview.jpg) 
+![](app1.jpg)
+![](app2.jpg)
 
