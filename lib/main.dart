@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'tflite-Object-Detection',
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.dark, 
       ),
       home: HomeScreen(cameras),
     );

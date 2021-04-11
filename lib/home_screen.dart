@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
@@ -20,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<dynamic>? _recognitions;
   int _imageHeight = 0;
   int _imageWidth = 0;
+  double opacityLevel = 1.0;
   String _model = "";
 
   @override
@@ -70,6 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  changeOpacity() {
+    setState(() => opacityLevel = opacityLevel == 0 ? 1.0 : 0.25);
+  }
+
   @override
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
@@ -79,25 +86,99 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: _model == ""
           ? Container(
+              constraints: BoxConstraints.expand(),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/Background3.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
               alignment: Alignment.center,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  ElevatedButton(
-                    child: const Text('SSD MobileNet'),
-                    onPressed: () => onSelectModel(ssd),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 5.5,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            color: Colors.redAccent.withOpacity(0.5),
+                            child: TextButton(
+                              child: const Text(
+                                'SSD MobileNet',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              onPressed: () => onSelectModel(ssd),
+                            ),
+                          )),
+                    ),
                   ),
-                  ElevatedButton(
-                    child: const Text("Tiny YOLOv2"),
-                    onPressed: () => onSelectModel(yolo),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 5.5,
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          color: Colors.greenAccent.withOpacity(0.5),
+                          child: TextButton(
+                            child: const Text(
+                              "Tiny YOLOv2",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            onPressed: () => onSelectModel(yolo),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                  ElevatedButton(
-                    child: const Text("Mobilenet"),
-                    onPressed: () => onSelectModel(mobilenet),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 5.5,
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          color: Colors.blueAccent.withOpacity(0.5),
+                          child: TextButton(
+                            child: const Text(
+                              "Mobilenet",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            onPressed: () => onSelectModel(mobilenet),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                  ElevatedButton(
-                    child: const Text("Posenet"),
-                    onPressed: () => onSelectModel(posenet),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 5.5,
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          color: Colors.yellowAccent.withOpacity(0.5),
+                          child: TextButton(
+                            child: const Text(
+                              "Posenet",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            onPressed: () => onSelectModel(posenet),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
