@@ -107,130 +107,132 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               alignment: Alignment.center,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height / 5.5,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          color: Colors.greenAccent.withOpacity(0.3),
-                          child: Center(
-                            child: AnimatedTextKit(
-                              animatedTexts: [
-                                ColorizeAnimatedText(
-                                  'SSD MobileNet',
-                                  textStyle: _textstyle,
-                                  speed: Duration(milliseconds: 200),
-                                  textAlign: TextAlign.center,
-                                  colors: _colors,
-                                )
-                              ],
-                              repeatForever: true,
-                              isRepeatingAnimation: true,
-                              onTap: () => onSelectModel(ssd),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15.0),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 5.5,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            color: Colors.greenAccent.withOpacity(0.3),
+                            child: Center(
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  ColorizeAnimatedText(
+                                    'SSD MobileNet',
+                                    textStyle: _textstyle,
+                                    speed: Duration(milliseconds: 200),
+                                    textAlign: TextAlign.center,
+                                    colors: _colors,
+                                  )
+                                ],
+                                repeatForever: true,
+                                isRepeatingAnimation: true,
+                                onTap: () => onSelectModel(ssd),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height / 5.5,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          color: Colors.greenAccent.withOpacity(0.3),
-                          child: Center(
-                            child: AnimatedTextKit(
-                              animatedTexts: [
-                                ColorizeAnimatedText(
-                                  'Tiny YOLOv2',
-                                  textStyle: _textstyle,
-                                  speed: Duration(milliseconds: 300),
-                                  textAlign: TextAlign.center,
-                                  colors: _colors,
-                                )
-                              ],
-                              repeatForever: true,
-                              isRepeatingAnimation: true,
-                              onTap: () => onSelectModel(yolo),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15.0),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 5.5,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            color: Colors.greenAccent.withOpacity(0.3),
+                            child: Center(
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  ColorizeAnimatedText(
+                                    'Tiny YOLOv2',
+                                    textStyle: _textstyle,
+                                    speed: Duration(milliseconds: 300),
+                                    textAlign: TextAlign.center,
+                                    colors: _colors,
+                                  )
+                                ],
+                                repeatForever: true,
+                                isRepeatingAnimation: true,
+                                onTap: () => onSelectModel(yolo),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height / 5.5,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          color: Colors.greenAccent.withOpacity(0.3),
-                          child: Center(
-                            child: AnimatedTextKit(
-                              animatedTexts: [
-                                ColorizeAnimatedText(
-                                  'MobileNet',
-                                  textStyle: _textstyle,
-                                  speed: Duration(milliseconds: 400),
-                                  textAlign: TextAlign.center,
-                                  colors: _colors,
-                                )
-                              ],
-                              repeatForever: true,
-                              isRepeatingAnimation: true,
-                              onTap: () => onSelectModel(mobilenet),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15.0),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 5.5,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            color: Colors.greenAccent.withOpacity(0.3),
+                            child: Center(
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  ColorizeAnimatedText(
+                                    'MobileNet',
+                                    textStyle: _textstyle,
+                                    speed: Duration(milliseconds: 400),
+                                    textAlign: TextAlign.center,
+                                    colors: _colors,
+                                  )
+                                ],
+                                repeatForever: true,
+                                isRepeatingAnimation: true,
+                                onTap: () => onSelectModel(mobilenet),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height / 5.5,
-                          width: MediaQuery.of(context).size.width / 1.2,
-                          color: Colors.greenAccent.withOpacity(0.3),
-                          child: Center(
-                            child: AnimatedTextKit(
-                              animatedTexts: [
-                                ColorizeAnimatedText(
-                                  'Posenet',
-                                  textStyle: _textstyle,
-                                  speed: Duration(milliseconds: 500),
-                                  textAlign: TextAlign.center,
-                                  colors: _colors,
-                                )
-                              ],
-                              repeatForever: true,
-                              isRepeatingAnimation: true,
-                              onTap: () => onSelectModel(posenet),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15.0),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 5.5,
+                            width: MediaQuery.of(context).size.width / 1.2,
+                            color: Colors.greenAccent.withOpacity(0.3),
+                            child: Center(
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  ColorizeAnimatedText(
+                                    'Posenet',
+                                    textStyle: _textstyle,
+                                    speed: Duration(milliseconds: 500),
+                                    textAlign: TextAlign.center,
+                                    colors: _colors,
+                                  )
+                                ],
+                                repeatForever: true,
+                                isRepeatingAnimation: true,
+                                onTap: () => onSelectModel(posenet),
+                              ),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             )
           : Stack(
