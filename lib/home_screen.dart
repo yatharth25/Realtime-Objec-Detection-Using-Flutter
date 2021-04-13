@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
 import 'dart:math' as math;
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 import 'camera.dart';
 import 'bound_box.dart';
@@ -24,6 +25,18 @@ class _HomeScreenState extends State<HomeScreen> {
   int _imageWidth = 0;
   double opacityLevel = 1.0;
   String _model = "";
+  static const _colors = [
+    Colors.yellow,
+    Colors.purple,
+    Colors.blue,
+    Colors.red,
+    Colors.pink,
+    Colors.yellow,
+  ];
+  static const _textstyle = TextStyle(
+      fontSize: 30,
+      //fontWeight: FontWeight.bold,
+      fontFamily: 'Horizon');
 
   @override
   void initState() {
@@ -102,37 +115,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15.0),
                       child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                          child: Container(
-                            height: MediaQuery.of(context).size.height / 5.5,
-                            width: MediaQuery.of(context).size.width / 1.2,
-                            color: Colors.redAccent.withOpacity(0.5),
-                            child: TextButton(
-                              child: const Text(
-                                'SSD MobileNet',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              onPressed: () => onSelectModel(ssd),
-                            ),
-                          )),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15.0),
-                      child: BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                         child: Container(
                           height: MediaQuery.of(context).size.height / 5.5,
                           width: MediaQuery.of(context).size.width / 1.2,
-                          color: Colors.greenAccent.withOpacity(0.5),
-                          child: TextButton(
-                            child: const Text(
-                              "Tiny YOLOv2",
-                              style: TextStyle(color: Colors.white),
+                          color: Colors.greenAccent.withOpacity(0.3),
+                          child: Center(
+                            child: AnimatedTextKit(
+                              animatedTexts: [
+                                ColorizeAnimatedText(
+                                  'SSD MobileNet',
+                                  textStyle: _textstyle,
+                                  speed: Duration(milliseconds: 200),
+                                  textAlign: TextAlign.center,
+                                  colors: _colors,
+                                )
+                              ],
+                              repeatForever: true,
+                              isRepeatingAnimation: true,
+                              onTap: () => onSelectModel(ssd),
                             ),
-                            onPressed: () => onSelectModel(yolo),
                           ),
                         ),
                       ),
@@ -147,13 +149,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           height: MediaQuery.of(context).size.height / 5.5,
                           width: MediaQuery.of(context).size.width / 1.2,
-                          color: Colors.blueAccent.withOpacity(0.5),
-                          child: TextButton(
-                            child: const Text(
-                              "Mobilenet",
-                              style: TextStyle(color: Colors.white),
+                          color: Colors.greenAccent.withOpacity(0.3),
+                          child: Center(
+                            child: AnimatedTextKit(
+                              animatedTexts: [
+                                ColorizeAnimatedText(
+                                  'Tiny YOLOv2',
+                                  textStyle: _textstyle,
+                                  speed: Duration(milliseconds: 300),
+                                  textAlign: TextAlign.center,
+                                  colors: _colors,
+                                )
+                              ],
+                              repeatForever: true,
+                              isRepeatingAnimation: true,
+                              onTap: () => onSelectModel(yolo),
                             ),
-                            onPressed: () => onSelectModel(mobilenet),
                           ),
                         ),
                       ),
@@ -168,13 +179,52 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Container(
                           height: MediaQuery.of(context).size.height / 5.5,
                           width: MediaQuery.of(context).size.width / 1.2,
-                          color: Colors.yellowAccent.withOpacity(0.5),
-                          child: TextButton(
-                            child: const Text(
-                              "Posenet",
-                              style: TextStyle(color: Colors.white),
+                          color: Colors.greenAccent.withOpacity(0.3),
+                          child: Center(
+                            child: AnimatedTextKit(
+                              animatedTexts: [
+                                ColorizeAnimatedText(
+                                  'MobileNet',
+                                  textStyle: _textstyle,
+                                  speed: Duration(milliseconds: 400),
+                                  textAlign: TextAlign.center,
+                                  colors: _colors,
+                                )
+                              ],
+                              repeatForever: true,
+                              isRepeatingAnimation: true,
+                              onTap: () => onSelectModel(mobilenet),
                             ),
-                            onPressed: () => onSelectModel(posenet),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 5.5,
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          color: Colors.greenAccent.withOpacity(0.3),
+                          child: Center(
+                            child: AnimatedTextKit(
+                              animatedTexts: [
+                                ColorizeAnimatedText(
+                                  'Posenet',
+                                  textStyle: _textstyle,
+                                  speed: Duration(milliseconds: 500),
+                                  textAlign: TextAlign.center,
+                                  colors: _colors,
+                                )
+                              ],
+                              repeatForever: true,
+                              isRepeatingAnimation: true,
+                              onTap: () => onSelectModel(posenet),
+                            ),
                           ),
                         ),
                       ),
